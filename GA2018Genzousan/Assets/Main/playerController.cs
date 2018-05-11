@@ -11,13 +11,13 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//←に動かす
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){
-			transform.Translate(-3,0,0);
-		}
-		//→に動かす
-		if(Input.GetKeyDown(KeyCode.RigntArrow)){
-			transform.Translate(3,0,0);
-		}
-	}
+        ////←に動かす
+        //if(Input.GetKeyDown(KeyCode.LeftArrow)){
+        //    transform.Translate(-3,0,0);
+        //}
+        ////→に動かす
+        //if(Input.GetKeyDown(KeyCode.RigntArrow)){
+        //    transform.Translate(3,0,0);
+    //    }
+    }
 }
