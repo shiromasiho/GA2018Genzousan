@@ -32,3 +32,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+GA2018Genzousan/.vs/GA2018Genzousan/v15/Server/sqlite3/storage.ide-shm
+GA2018Genzousan/.vs/GA2018Genzousan/v15/Server/sqlite3/db.lock
+GA2018Genzousan/.vs/GA2018Genzousan/v15/Server/sqlite3/storage.ide
+GA2018Genzousan/.vs/GA2018Genzousan/v15/Server/sqlite3/storage.ide-wal
+GA2018Genzousan/Assets/etc.meta
