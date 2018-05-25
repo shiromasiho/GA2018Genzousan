@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hellotama : MonoBehaviour {
+
     int bulletflg;
     public GameObject tama;
     public GameObject bullet;
