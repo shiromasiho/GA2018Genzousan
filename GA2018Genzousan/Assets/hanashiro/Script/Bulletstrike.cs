@@ -42,12 +42,13 @@ public class Bulletstrike : MonoBehaviour {
                 if (playerhp > 0)   //プレイヤー残機がある場合
                 {
                     playerhp--;
-                    Debug.Log(playerhp);
+                    Debug.Log("プレイヤー残機数"+playerhp);
                 }
                 else
                 {
                     Destroy(this.player);   //プレイヤー残機がない場合
-                    playerP = 0;
+                     playerP = 0;
+                    
                 }
             }
         }
