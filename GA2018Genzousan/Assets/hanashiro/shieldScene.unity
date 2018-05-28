@@ -225,9 +225,9 @@ MonoBehaviour:
     type: 2}
   baria3Prehub: {fileID: 1086472264749936, guid: c3b1b0ead2b4e8c48918297d40d69274,
     type: 2}
-  baria1: {fileID: 0}
-  baria2: {fileID: 0}
-  baria3: {fileID: 0}
+  baria1: {fileID: 1541090065214118, guid: cde6097eb34587243aea01108cd7915f, type: 2}
+  baria2: {fileID: 1811256543524762, guid: 10f5e0d8a231fc943a6ca6f4132eb055, type: 2}
+  baria3: {fileID: 1086472264749936, guid: c3b1b0ead2b4e8c48918297d40d69274, type: 2}
 --- !u!4 &1958259752
 Transform:
   m_ObjectHideFlags: 0
