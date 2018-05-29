@@ -14,7 +14,7 @@ public class Hellotama : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("a")&&bulletflg == 1)
+        if (Input.GetKeyDown("x")&&bulletflg == 1)  //shoot
         {
             Debug.Log("弾丸にゃ");
             Instantiate(bullet);
@@ -23,7 +23,7 @@ public class Hellotama : MonoBehaviour {
 	}
     void OnTriggerStay2D(Collider2D other)
     {
-        if(Input.GetKeyDown("b")&&bulletflg ==0)
+        if(Input.GetKeyDown("z")&&bulletflg ==0)    //stock
         {
             if (other.tag == "tama")
             {

@@ -15,11 +15,11 @@ public class fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //等速で落下
+        //飛んでくるやで
         transform.Translate(-0.1f, 0, 0);
 
         //画面外に出たら破棄
-        if (transform.position.x < -7.5f)
+        if (transform.position.x < 10.5f)
         {
             Destroy(gameObject);
         }
