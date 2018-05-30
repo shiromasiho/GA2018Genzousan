@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fire : MonoBehaviour
-{
+public class ICBox : MonoBehaviour {
 
     GameObject tenguplayer;
 
     void Start()
     {
         this.tenguplayer = GameObject.Find("tenguplayer");    //追加
-        
+
     }
 
     // Update is called once per frame

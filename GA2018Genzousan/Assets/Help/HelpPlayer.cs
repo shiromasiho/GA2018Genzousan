@@ -11,6 +11,8 @@ public class HelpPlayer : MonoBehaviour {
     float walkForce = 30.0f;
     float maxWalkSpeed = 2.0f;
 
+    //public GameObject playarfire;
+
 	// Use this for initialization
 	void Start () {
         this.rigid2D = GetComponent<Rigidbody2D>();
@@ -37,5 +39,6 @@ public class HelpPlayer : MonoBehaviour {
         {
             this.rigid2D.AddForce(transform.right * Key * this.walkForce);
         }
+
 	}
 }

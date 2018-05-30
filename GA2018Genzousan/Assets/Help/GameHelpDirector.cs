@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; //LoadScene
+using UnityEngine.UI;
 
 public class GameHelpDirector : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class GameHelpDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("s"))
         {
             SceneManager.LoadScene("Title Scene");
         }
