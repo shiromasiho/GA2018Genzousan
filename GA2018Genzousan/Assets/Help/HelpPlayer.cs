@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HelpPlayer : MonoBehaviour {
 
@@ -17,12 +18,12 @@ public class HelpPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //ジャンプ 
+       // ジャンプ 
         if (Input.GetKeyDown(KeyCode.UpArrow) &&
-            this.rigid2D.velocity.y == 0)
-        {
+            this.rigid2D.velocity.y == 0){
             this.rigid2D.AddForce(transform.up * this.jumpForce);
         }
+
         //移動 
         int Key = 0;
         if (Input.GetKey(KeyCode.RightArrow)) Key = 1;

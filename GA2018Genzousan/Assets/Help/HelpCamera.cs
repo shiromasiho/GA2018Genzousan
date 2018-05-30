@@ -14,6 +14,6 @@ public class HelpCamera : MonoBehaviour {
 	void Update () {
         Vector3 playerPos = this.player.transform.position;
         transform.position = new Vector3(
-            transform.position.x, transform.position.y, transform.position.z);
+            playerPos.x, transform.position.y, transform.position.z);
 	}
 }
