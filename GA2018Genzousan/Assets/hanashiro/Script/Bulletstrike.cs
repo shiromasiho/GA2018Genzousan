@@ -5,9 +5,9 @@ using UnityEngine;
 public class Bulletstrike : MonoBehaviour {
 
     float Buletspeed = -0.13f;  //弾の速度
-    static int playerhp = 1;    //プレイヤー残機(アーマー着用数)
-    static int playerP = 1; //プレイヤー表記管理変数
-    GameObject player;
+    static int playerhp = 6;    //プレイヤー残機(アーマー着用数)
+    public static int playerP = 1; //プレイヤー表記管理変数
+    public GameObject player;
    
 
     // Use this for initialization
