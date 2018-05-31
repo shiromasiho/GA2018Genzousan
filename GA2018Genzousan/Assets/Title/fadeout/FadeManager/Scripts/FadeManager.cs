@@ -124,21 +124,10 @@ public class FadeManager : MonoBehaviour
 			this.fadeAlpha = Mathf.Lerp (0f, 1f, time / interval);      
 			time += Time.deltaTime;
 			yield return 0;
-		}
-		
+		}		
 		//シーン切替 .
 
-        SceneManager.LoadScene(namae);
-
-        //だんだん明るく .
-        time = 0;
-		while (time <= interval) {
-			this.fadeAlpha = Mathf.Lerp (1f, 0f, time / interval);
-			time += Time.deltaTime;
-			yield return 0;
-		}
-		
-		this.isFading = false;
+        SceneManager.LoadScene(namae);   
 	}
 }
 
