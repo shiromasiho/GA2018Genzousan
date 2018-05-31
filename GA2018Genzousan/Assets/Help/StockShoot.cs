@@ -7,12 +7,14 @@ public class StockShoot : MonoBehaviour {
     public int bulletflg;
     public GameObject stockbullet;
     public GameObject playerbullet;
+    GameObject stock;
+
+    public static int stockflg = 1; //連射フラグ
     // Use this for initialization
     void Start()
     {
-        bulletflg = 0;
-        //GameObject newStockbullet = (GameObject)Instantiate(stockbullet);
-        //newStockbullet.name = stockbullet.name;
+        bulletflg = 1;
+        stock = GameObject.Find("FireGenerator");
     }
 
     // Update is called once per frame
@@ -20,10 +22,12 @@ public class StockShoot : MonoBehaviour {
     {
         if (Input.GetKeyDown("x") && bulletflg == 1)  //shoot
         {
-            Debug.Log("弾丸にゃ");
             Instantiate(playerbullet);
-           GameObject obj = Instantiate(playerbullet) as GameObject;
+            FireGenerator.Pfireflg = 1;
+    //       GameObject obj = Instantiate(playerbullet) as GameObject;
             bulletflg = 0;
+            Debug.Log("弾丸にゃ");
+            Debug.Log("hokan" + bulletflg);
         }
     }
     void OnTriggerEnter2D(Collider2D other)

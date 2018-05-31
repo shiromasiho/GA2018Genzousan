@@ -924,7 +924,7 @@ MonoBehaviour:
   bulletflg: 0
   stockbullet: {fileID: 1272913676846388, guid: 344f46aa4c3f89b49ba04e30809e4612,
     type: 2}
-  playerbullet: {fileID: 1227763935449594, guid: 4aee7f97505b2bc4eab2224dd884ac6d,
+  playerbullet: {fileID: 1142517210480832, guid: 2a928a8b78dbc64458fd7df7f8dfdede,
     type: 2}
 --- !u!1 &1583063240
 GameObject:
@@ -1241,6 +1241,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1272913676846388, guid: 344f46aa4c3f89b49ba04e30809e4612, type: 2}
+  go: {fileID: 0}
+  playerfirefab: {fileID: 1142517210480832, guid: 2a928a8b78dbc64458fd7df7f8dfdede,
+    type: 2}
+  go2: {fileID: 0}
 --- !u!4 &2136312095
 Transform:
   m_ObjectHideFlags: 0
