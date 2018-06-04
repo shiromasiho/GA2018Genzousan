@@ -22,7 +22,6 @@ public class hiraki : MonoBehaviour
         //移動 
         if (Input.GetKey(KeyCode.RightArrow)) Key = 1;
         if (Input.GetKey(KeyCode.LeftArrow)) Key = -1;
-        if (Input.GetKey(KeyCode.Space)) Enemy.EnemyFlg = 1;
 
         //プレイヤー速度
         float speedx = Mathf.Abs(this.rigid2D.velocity.x);

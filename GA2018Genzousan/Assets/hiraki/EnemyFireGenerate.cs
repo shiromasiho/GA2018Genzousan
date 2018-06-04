@@ -8,7 +8,7 @@ public class EnemyFireGenerate : MonoBehaviour
     public GameObject firePrefab;
     float span = 2.5f;
     float delta = 0;
-    int GeneFlg = 1;       // 弾生成フラグ
+    public static int GeneFlg = 1;       // 弾生成フラグ
 
     void Update()
     {
