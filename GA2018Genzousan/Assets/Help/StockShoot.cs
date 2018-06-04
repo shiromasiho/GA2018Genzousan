@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class StockShoot : MonoBehaviour {
 
-    int bulletflg;
+    public int bulletflg;
     public GameObject stockbullet;
     public GameObject playerbullet;
+    GameObject stock;
+
+ //   public static int stockflg = 1; //連射フラグ
+
     // Use this for initialization
     void Start()
     {
-        bulletflg = 0;
+        bulletflg = 1;
+        stock = GameObject.Find("FireGenerator");
     }
 
     // Update is called once per frame
     void Update()
     {
+        stockbullet = this.stock.GetComponent<FireGenerator>().go;
         if (Input.GetKeyDown("x") && bulletflg == 1)  //shoot
         {
-            Debug.Log("弾丸にゃ");
             Instantiate(playerbullet);
+            FireGenerator.Pfireflg = 1;
+    //       GameObject obj = Instantiate(playerbullet) as GameObject;
             bulletflg = 0;
+            Debug.Log("弾丸にゃ");
+            Debug.Log("hokan" + bulletflg);
         }
     }
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (Input.GetKeyDown("z") && bulletflg == 0)    //stock
         {

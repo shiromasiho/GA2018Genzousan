@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06aea2de5c8f7924394d1f6067ae33ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teki: {fileID: 1272913676846388, guid: 344f46aa4c3f89b49ba04e30809e4612, type: 2}
+  teki: {fileID: 1881669226449978, guid: 40efed99b2f9522458b3446ca89e25bb, type: 2}
 --- !u!61 &2077896612
 BoxCollider2D:
   m_ObjectHideFlags: 0
