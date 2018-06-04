@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireGenerator : MonoBehaviour {
+public class FireGeneratorS : MonoBehaviour {
 
 
     public GameObject firePrefab;
-    float span = 4.0f;
+    float span = 2.0f;
     float delta = 0;
     public GameObject go;
     public GameObject playerfirefab;
@@ -21,8 +21,8 @@ public class FireGenerator : MonoBehaviour {
         { //エネミーファイア
             this.delta = 0;
             go = Instantiate(firePrefab) as GameObject;
-            // int px = Random.Range(-3, 4);
-            go.transform.position = new Vector3(20, -4, 0); //炎の位置
+            int py = Random.Range(-2, -4);
+            go.transform.position = new Vector3(3, py, 0); //炎の位置
         }
 
 
