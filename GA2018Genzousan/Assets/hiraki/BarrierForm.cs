@@ -6,6 +6,7 @@ public class BarrierForm : MonoBehaviour
 {
     //シールド生成
     SpriteRenderer MainSpriteRenderer;
+    BoxCollider2D Barrier_ObjectCollider;
     public Sprite Barrier1Prefab;
     public Sprite Barrier2Prefab;
     public Sprite Barrier3Prefab;
@@ -19,13 +20,12 @@ public class BarrierForm : MonoBehaviour
     int BFC = 600;                      // バリアの回復時間
     int BF2;                            // バリアの体力の比較用
 
-    BoxCollider2D m_ObjectCollider;
 
     void Start()
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        m_ObjectCollider = gameObject.GetComponent<BoxCollider2D>();
-        m_ObjectCollider.isTrigger = false;
+        Barrier_ObjectCollider = gameObject.GetComponent<BoxCollider2D>();
+        Barrier_ObjectCollider.isTrigger = false;
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class BarrierForm : MonoBehaviour
             {
                 case 3:
                     MainSpriteRenderer.sprite = Barrier1Prefab;         // 第１段階のバリア描画
-                    m_ObjectCollider.isTrigger = false;                 // 当たり判定実装
+                    Barrier_ObjectCollider.isTrigger = false;                 // 当たり判定実装
                     break;
 
                 case 2:
@@ -57,7 +57,7 @@ public class BarrierForm : MonoBehaviour
 
                 case 0:
                     MainSpriteRenderer.sprite = Barrier4Prefab;         // 描画（画像無し）
-                    m_ObjectCollider.isTrigger = true;                  // 当たり判定解除
+                    Barrier_ObjectCollider.isTrigger = true;            // 当たり判定解除
                     EnemyFireGenerate.GeneFlg = 0;                      // 弾生成中止
                     RBCount = 4;
                     Enemy.EnemyFlg = 1;                                 // ボスが動き出す
@@ -77,7 +77,7 @@ public class BarrierForm : MonoBehaviour
                         {
                             BF++;
                             if (BF == 2) BFCount = BFC;      // もう１度数える
-                             else        BFChange = 0;
+                            else         BFChange = 0;
                         }
                     }
                 }

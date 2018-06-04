@@ -6,18 +6,27 @@ public class Enemy : MonoBehaviour {
 
     Rigidbody2D rigid2D;
     Animator animator;
+    BoxCollider2D Enemy_ObjectCollider;
     float Enemymove = 0.02f;                    // １フレームで動く単位
-    float Enemypos = 6.34f;                     // enemyの初期ポジション
+    float Enemypos = 6.34f;                      // enemyの初期ポジションｘ
     public  static int EnemyFlg = 0;            // 動くフラグ（０→動かない、１→手前へ、２→奥へ）
     int StayFlg = 0;                            // 一時停止フラグ
     int StayCount = 120;                        // 停止時間（120 → ２秒）
 
 	void Start () {
-        this.rigid2D = GetComponent<Rigidbody2D>();		
-	}
+        this.rigid2D = GetComponent<Rigidbody2D>();
+        Enemy_ObjectCollider = gameObject.GetComponent<BoxCollider2D>();
+        Enemy_ObjectCollider.isTrigger = false;
+    }
 	
 	void Update () {
         Vector3 pos = transform.position;
+
+        if (EnemyFlg == 0) Enemy_ObjectCollider.isTrigger = true;                  // 当たり判定解除
+        else               Enemy_ObjectCollider.isTrigger = false;                 // 当たり判定実装
+
+
+
 
         if ((pos.x >= (Enemypos-3)) && (EnemyFlg == 1) && (StayFlg == 0))
         {
