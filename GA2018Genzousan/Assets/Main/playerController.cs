@@ -14,8 +14,9 @@ public class playerController : MonoBehaviour {
     void Start(){
         this.rigid2D = GetComponent<Rigidbody2D>();
     }
-	
-	void Update () {
+
+    void Update()
+    {
         //ジャンプ 
         if (Input.GetKeyDown(KeyCode.UpArrow) &&
             this.rigid2D.velocity.y == 0)

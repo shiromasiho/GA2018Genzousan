@@ -30,19 +30,19 @@ public class shieldForm : MonoBehaviour
         {
 
              baria1 = Instantiate(baria1Prehub) as GameObject;
-            bariaswitch = 0;
+            bariaswitch = 5;
 
         }
         else if (bariaswitch == 2)
         {
          
             baria2 = Instantiate(baria2Prehub) as GameObject;
-            bariaswitch = 0;
+            bariaswitch = 5;
         }
         else if (bariaswitch == 3)
         {
             baria3 = Instantiate(baria3Prehub) as GameObject;
-            bariaswitch = 0;
+            bariaswitch = 5;
         }
         else if (bariaswitch == 0)  //バリアHPがないとき経過時間になるとバリア回復
         {

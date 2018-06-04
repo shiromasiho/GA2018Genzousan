@@ -6,7 +6,7 @@ public class PlayerBlletForm : MonoBehaviour {
     //プレイヤーが出す弾の生成
 
     public GameObject Car2Prehub;
-  
+
     static int PlayerBulletswitch = 1;   //弾を生成する変数
                                    // Use this for initialization
     void Start () {
@@ -18,8 +18,8 @@ public class PlayerBlletForm : MonoBehaviour {
         
         if (PlayerBulletswitch ==1&& Input.GetMouseButtonDown(0))   //左クリックされた場合に弾を生成する
         {
-          
-         GameObject go = Instantiate(Car2Prehub) as GameObject;
+
+            GameObject go = Instantiate(Car2Prehub) as GameObject;
          
             
         }

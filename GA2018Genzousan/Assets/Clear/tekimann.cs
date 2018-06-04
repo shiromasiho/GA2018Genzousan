@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //LoadScene を使うために必要
 
 public class tekimann : MonoBehaviour {
     public GameObject teki;
