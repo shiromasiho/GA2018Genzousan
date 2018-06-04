@@ -6,5 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Title/Title Scene.unity
+    guid: a086945ba82a5b549a956234a4a6bd4e
+  - enabled: 1
     path: Assets/Help/Help Scene.unity
     guid: fe9367781ba12aa4582e4228bb57bc2b
+  - enabled: 1
+    path: Assets/Main/Main Scene.unity
+    guid: 73f92453a61f9a7419f2957578b97543
+  - enabled: 1
+    path: Assets/Clear/Clear Scene.unity
+    guid: 98d76f1949d53ce4cbe4e0061aeddc23
+  - enabled: 1
+    path: Assets/Over/OverScene.unity
+    guid: cfbedc6caa369a34c962b9b6db156f79
