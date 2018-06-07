@@ -19,7 +19,7 @@ public class PlayerBullet : MonoBehaviour {
         transform.Translate(0.1f, 0, 0);
 
         //破棄
-        if (transform.position.x > 15.0f){
+        if (transform.position.x > 2.0f){
             Destroy(gameObject);
         }
 

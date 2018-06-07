@@ -33,19 +33,11 @@ public class ICBox : MonoBehaviour {
 
     }
     //全員消す
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        ICBox.GetICflg = 1; //とったで工藤！！
-    }
-
-    void IcSkill()
-    {
-        if (GetICflg == 1)
-        {
-
-
-        }
+        ICBox.GetICflg = 1;
+        Debug.Log("とったで工藤");
     }
 
 }

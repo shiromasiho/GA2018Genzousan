@@ -37,7 +37,7 @@ public class PlayerStockShoot : MonoBehaviour {
     {
         if (Input.GetKeyDown("z") && bulletflg == 0 && stockflg==0)    //stock
         {
-            if (other.tag == "tama")
+            if (other.tag == "fire")
             {
                 Debug.Log("撃たれてんじゃねぇか！！！");
                 Destroy(stockbullet);
@@ -46,7 +46,7 @@ public class PlayerStockShoot : MonoBehaviour {
         }
         else if (Input.GetKeyDown("z") && stockflg == 1)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
         {
-            if (other.tag == "tama")
+            if (other.tag == "fire")
             {
 
                 bulletflg++;

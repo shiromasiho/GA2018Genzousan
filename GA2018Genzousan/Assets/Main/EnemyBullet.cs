@@ -38,6 +38,7 @@ public class EnemyBullet : MonoBehaviour {
         if (collision.gameObject.name == "player")
         {
           //   GameMainDirector.playerHp = GameMainDirector.playerHp -1;  //死ぬやで
+            Debug.Log("死ぬやで");
             Destroy(wasi);
         }
         if (collision.gameObject.tag == "fire")
