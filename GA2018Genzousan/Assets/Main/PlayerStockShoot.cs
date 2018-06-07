@@ -9,8 +9,7 @@ public class PlayerStockShoot : MonoBehaviour {
     public GameObject playerbullet;
     GameObject stock;
 
-    //stockflg (弾連射）
-    public static int stockflg; 
+    public static int stockflg;    //stockflg (弾連射）
 
     // Use this for initialization
     void Start()
@@ -27,7 +26,7 @@ public class PlayerStockShoot : MonoBehaviour {
         if (Input.GetKeyDown("x") && bulletflg == 1)  //shoot
         {
             Instantiate(playerbullet);
-            FireGenerator.Pfireflg = 1;
+            FireGeneratorS.Pfireflg = 1;
             //       GameObject obj = Instantiate(playerbullet) as GameObject;
             bulletflg = 0;
             Debug.Log("弾丸にゃ");

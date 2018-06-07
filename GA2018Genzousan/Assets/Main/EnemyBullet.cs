@@ -7,10 +7,15 @@ public class EnemyBullet : MonoBehaviour {
 
 	// Use this for initialization
     GameObject player;
+    public GameObject wasi;
+    GameObject gamemaindirector;    //変数呼ぶんご
+    GameMainDirector maindirector;
+
 
     void Start()
     {
         this.player = GameObject.Find("player");
+
         
     }
 
@@ -30,6 +35,14 @@ public class EnemyBullet : MonoBehaviour {
     //全員消す
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.name == "player")
+        {
+          //   GameMainDirector.playerHp = GameMainDirector.playerHp -1;  //死ぬやで
+            Destroy(wasi);
+        }
+        if (collision.gameObject.tag == "fire")
+        {
+            Destroy(wasi);
+        }
     }
 }
