@@ -20,7 +20,7 @@ public class PEquipment : MonoBehaviour
     void Update()
     {
         //if (Input.GetKey(KeyCode.Keypad8)&& Input.GetKey(KeyCode.Keypad1)&& Input.GetKey(KeyCode.Keypad0))
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyDown("a"))
         {
             if (Equipment_go == 0) //１回目の装備の中身
             {
