@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ButtonSelect : MonoBehaviour {
     int GameMode = 1;
-
     public string GameScene;
     FadeManager FadeManager;
     // Use this for initialization
     void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,8 +27,6 @@ public class ButtonSelect : MonoBehaviour {
             ButtonClick();
         }
 	}
-
-    
     public void ButtonClick()
     {
 
