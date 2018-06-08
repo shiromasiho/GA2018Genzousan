@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement; //LoadScene を使うために必要
 
 public class GameMainDirector : MonoBehaviour {
 
-    public int playerHp;
-    public int enemyHp;
+    public static int playerHp;           // バリアの体力
+    public static int enemyHp;
     // Use this for initialization
     void Start()
     {
