@@ -11,6 +11,8 @@ public class EnemyBullet : MonoBehaviour {
     GameObject gamemaindirector;    //変数呼ぶんご
     GameMainDirector maindirector;
 
+    PEquipment equipment;
+
 
     void Start()
     {
@@ -39,6 +41,7 @@ public class EnemyBullet : MonoBehaviour {
         {
           //   GameMainDirector.playerHp = GameMainDirector.playerHp -1;  //死ぬやで
             Debug.Log("死ぬやで");
+            PEquipment.Equipment_flg = 1;//装備飛んだ
             Destroy(wasi);
         }
         if (collision.gameObject.tag == "fire")
