@@ -20,6 +20,7 @@ public class ShieldControl : MonoBehaviour {
     int BF2;                            // バリアの体力の比較用
 
 
+
     void Start()
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -61,6 +62,7 @@ public class ShieldControl : MonoBehaviour {
                     FireGeneratorS.GeneFlg2 = 0;
                     RBCount = 4;
                     EnemyControl.EnemyFlg = 1;                                 // ボスが動き出す
+
                     break;
             }
 

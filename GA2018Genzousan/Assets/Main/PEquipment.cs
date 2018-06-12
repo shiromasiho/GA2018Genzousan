@@ -10,7 +10,7 @@ public class PEquipment : MonoBehaviour
     int box;    //ランダム格納
     public static int Equipment_go;    //装備回数カウント
     public static int GameMode = 0;
-    public static int Equipment_flg = 0;
+    public static int Equipment_flg = 0; //攻撃うけたら消す
     public static int riseto;
     // Use this for initialization
     void Start()
