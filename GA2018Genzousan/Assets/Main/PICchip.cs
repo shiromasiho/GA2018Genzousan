@@ -20,8 +20,10 @@ public class PICchip : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("b"))
+    //    if (Input.GetKeyDown("b"))
+        if (ICBox.GetICflg ==1)
         {
+            ICBox.GetICflg = 0;
             if (IC_flg == 0) //取得flg
             {
 
