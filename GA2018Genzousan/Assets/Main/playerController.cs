@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour {
 
+    GameObject player;
+
         Rigidbody2D rigid2D;
         Animator animator;
         float jumpForce = 680.0f;
         float walkForce = 30.0f;
         float maxWalkSpeed = 2.0f;
+
+        float Ground = 0.0f;
+        float jumpKey = 0;
 
 
     void Start(){
@@ -17,12 +22,17 @@ public class playerController : MonoBehaviour {
 
     void Update()
     {
-        //ジャンプ 
-        if (Input.GetKeyDown(KeyCode.UpArrow) &&
-            this.rigid2D.velocity.y == 0)
+        //ジャンプ
+        Ground = transform.position.y;
+
+        if ((jumpKey == 1) && (Ground <= -3.7)) jumpKey = 0;
+
+        if ((Input.GetKeyDown(KeyCode.UpArrow)) && (jumpKey == 0))
         {
             this.rigid2D.AddForce(transform.up * this.jumpForce);
+            jumpKey = 1;
         }
+
         //移動 
         int Key = 0;
         if (Input.GetKey(KeyCode.RightArrow)) Key = 1;
@@ -36,6 +46,5 @@ public class playerController : MonoBehaviour {
         {
             this.rigid2D.AddForce(transform.right * Key * this.walkForce);
         }
-
     }
 }

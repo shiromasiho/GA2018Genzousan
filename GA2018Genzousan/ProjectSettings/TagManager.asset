@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tama
   - fire
+  - enemy
   layers:
   - Default
   - TransparentFX

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
-        GameObject player;
-
+    public GameObject taka;
     void Start()
     {
         Vector2 tmp = GameObject.Find("player").transform.position;  //プレイヤーの位置情報取得
@@ -20,14 +19,21 @@ public class PlayerBullet : MonoBehaviour {
         transform.Translate(0.1f, 0, 0);
 
         //破棄
-        if (transform.position.x > 15.0f){
+        if (transform.position.x > 2.0f){
             Destroy(gameObject);
         }
 
     }
     //全員消す
-    private void OnCollisionEnter2D(Collision2D collision)
+     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "fire")
+        {
+            Destroy(taka);
+        }
+        if (collision.gameObject.tag == "enemy")
+        {
+            Destroy(taka);
+        }
     }
 }

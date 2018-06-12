@@ -11,6 +11,8 @@ public class HelpPlayer : MonoBehaviour {
     float walkForce = 30.0f;
     float maxWalkSpeed = 2.0f;
 
+    float Ground = 0.0f;
+    float jumpKey = 0;
     //public GameObject playarfire;
 
 	// Use this for initialization
@@ -21,10 +23,16 @@ public class HelpPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
        // ジャンプ 
-        if (Input.GetKeyDown(KeyCode.UpArrow) &&
-            this.rigid2D.velocity.y == 0){
+        Ground = transform.position.y;
+
+        if ((jumpKey == 1) && (Ground <= -3.7)) jumpKey = 0;
+
+        if ((Input.GetKeyDown(KeyCode.UpArrow)) && (jumpKey == 0))
+        {
             this.rigid2D.AddForce(transform.up * this.jumpForce);
+            jumpKey = 1;
         }
+
 
         //移動 
         int Key = 0;
