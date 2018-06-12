@@ -22,12 +22,13 @@ public class ICskill_2 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (PICchip.IC_go == 2)    //１回目に出る装備
+        if (PICchip.IC_go == 2 ||PICchip.riseto==1)    //１回目に出る装備
         {
             switch (PICchip.GameMode)
             {
                 case 0:
                      MainSpriteRenderer.sprite = null;   //消した
+                     PICchip.riseto = 0;
                     break;
                 case 1:
                     MainSpriteRenderer.sprite = Jump;   //spriteを入れ替え

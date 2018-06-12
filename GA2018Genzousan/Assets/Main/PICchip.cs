@@ -182,7 +182,7 @@ public class PICchip : MonoBehaviour {
         }
         else if (IC_flg == 1)    //攻撃受けたから０やで
         {
-           // riseto = 1;
+            riseto = 1;
             IC_go = 0;
             GameMode = 0;
             Continuous_shootingflg = 0;

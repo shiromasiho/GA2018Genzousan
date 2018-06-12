@@ -22,7 +22,7 @@ public class ICskill_1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (PICchip.IC_go == 1)    //１回目に出る装備
+        if (PICchip.IC_go == 1 ||PICchip.riseto==1)    //１回目に出る装備
         {
             switch (PICchip.GameMode)
             {
