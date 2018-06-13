@@ -32,9 +32,9 @@ public class StockShoot : MonoBehaviour {
             Debug.Log("hokan" + bulletflg);
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKeyDown("z") && bulletflg == 0)    //stock
+        if (Input.GetKey("z") && bulletflg == 0)    //stock
         {
             if (other.tag == "tama")
             {

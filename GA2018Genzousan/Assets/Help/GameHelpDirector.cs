@@ -16,4 +16,8 @@ public class GameHelpDirector : MonoBehaviour
             SceneManager.LoadScene("Title Scene");
         }
     }
+    //void OnCollisionEnter(Collider2D other)
+    //{
+    //    SceneManager.LoadScene("Title Scene");
+    //    }
 }

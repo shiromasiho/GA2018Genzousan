@@ -8,7 +8,7 @@ public class playerController : MonoBehaviour {
 
         Rigidbody2D rigid2D;
         Animator animator;
-        float jumpForce = 680.0f;
+        float jumpForce = 580.0f;
         float walkForce = 30.0f;
         float maxWalkSpeed = 2.0f;
 
@@ -29,7 +29,7 @@ public class playerController : MonoBehaviour {
 
         if ((Input.GetKeyDown(KeyCode.UpArrow)) && (jumpKey == 0))
         {
-            this.rigid2D.AddForce(transform.up * this.jumpForce);
+            this.rigid2D.AddForce(transform.up *( this.jumpForce *skillMng.jumpskill) );//skill
             jumpKey = 1;
         }
 
