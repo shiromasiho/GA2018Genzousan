@@ -41,6 +41,7 @@ public class ButtonSelect : MonoBehaviour {
                 Debug.Log(FadeManager);
                 FadeManager.namae = "Main Scene";
                 FadeManager.Instance.LoadScene("Main Scene", 1.0f);
+                
                 break;
             case 2:
                 FadeManager.namae = "Help Scene";
