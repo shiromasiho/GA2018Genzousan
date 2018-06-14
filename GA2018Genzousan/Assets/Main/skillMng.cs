@@ -12,6 +12,11 @@ public class skillMng : MonoBehaviour {
     public static int jumpskill =1;
     public static int Continuous_shootingskill =1;
 	// Use this for initialization
+
+    public static int Bustskill;  //ブースト
+    public static int Range_Largeskill;   //範囲大
+    public static int stockpulsskill; //ストック
+
 	void Start () {
         //gameObject.SetActive(false);
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -39,6 +44,34 @@ public class skillMng : MonoBehaviour {
 
           }else{
               MainSpriteRenderer.sprite = null;
+          }
+
+        //ブースト
+          if (PEquipment.Bustflg == 1)
+          {
+              Bustskill = 1;
+          }else{
+              Bustskill =0;
+          }
+
+          //範囲大
+          if (PEquipment.Range_Largeflg == 1)
+          {
+              Range_Largeskill = 2;
+          }
+          else
+          {
+              Range_Largeskill = 1;
+          }
+
+          //ストックぷらす
+          if (PEquipment.stockflg == 1)
+          {
+              stockpulsskill = 2;
+          }
+          else
+          {
+              stockpulsskill = 1;
           }
 
 	}

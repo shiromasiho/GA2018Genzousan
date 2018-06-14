@@ -25,9 +25,9 @@ public class playerController : MonoBehaviour {
         //ジャンプ
         Ground = transform.position.y;
 
-        if ((jumpKey == 1) && (Ground <= -3.7)) jumpKey = 0;
+        if ((jumpKey == 1) && (Ground <= -3.7) ) jumpKey = 0;
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow)) && (jumpKey == 0))
+        if ((Input.GetKeyDown(KeyCode.UpArrow)) && (jumpKey == 0))// &&skillMng.Bustskill ==2)
         {
             this.rigid2D.AddForce(transform.up *( this.jumpForce *skillMng.jumpskill) );//skill
             jumpKey = 1;

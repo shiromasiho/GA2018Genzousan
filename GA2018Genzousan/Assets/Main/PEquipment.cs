@@ -21,12 +21,13 @@ public class PEquipment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("a"))
+     //   if (Input.GetKeyDown("a"))
+        if(PlayerStockShoot.GetEquipmentflg == 1)
         {
+            PlayerStockShoot.GetEquipmentflg = 0;
             //Equipment_flg = 0;
             if (Equipment_flg == 0) //取得flg
             {
-               
                 if (Equipment_go == 0) //１回目の装備の中身
                 {
                     box = Random.Range(1, 4);   //変数にランダムの数を格納

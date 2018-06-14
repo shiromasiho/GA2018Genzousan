@@ -31,12 +31,12 @@ public class ShieldControl : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))            // SPACEキーで体力減少
-        {
-            BF--;                                       // 体力減少
-            BFChange = 1;
-            BFCount = BFC;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))            // SPACEキーで体力減少
+        //{
+        //    BF--;                                       // 体力減少
+        //    BFChange = 1;
+        //    BFCount = BFC;
+        //}
 
         if (RBCount <= 1)
         {
