@@ -5,6 +5,9 @@ using UnityEngine;
 public class pBoost : MonoBehaviour {
 
     //定数
+    SpriteRenderer MainSpriteRenderer;
+    Rigidbody2D rigid2D;
+
     public const int btlg = 10; //燃料
     public const float btsp = 20.0f; //Boost速度
     public float speedRunner = 2.0f; //移動速度
@@ -22,7 +25,9 @@ public class pBoost : MonoBehaviour {
 
     void Start()
     {
+        this.rigid2D = GetComponent<Rigidbody2D>();
         hover = GetComponent<Rigidbody2D>();
+        MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -31,14 +36,17 @@ public class pBoost : MonoBehaviour {
         //ブースト・ホバー　
         if (Input.GetKey(KeyCode.Space))　//飛ぶ
         //if(skillMng.Bustskill ==1){
-            {
-                transform.position +=(Vector3.up * 30.0f * Time.deltaTime);
+        {
+            Debug.Log("青空jump");
+            //    transform.position +=(Vector3.up * 30.0f * Time.deltaTime);
+            this.rigid2D.AddForce(transform.up * 400.0f * Time.deltaTime);
                 hover.gravityScale = 0;
             }
        //  }
         if (hover.gravityScale == 0)
         {
-            transform.position += (Vector3.down * 1.7f * Time.deltaTime);
+          //  transform.position += (Vector3.down * 1.7f * Time.deltaTime);
+            this.rigid2D.AddForce(transform.forward * 1.7f * Time.deltaTime);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))//下がるやで
         {
