@@ -5,12 +5,12 @@ using UnityEngine;
 public class HomeSound : MonoBehaviour
 {
     public AudioClip TitleBGM;
-    AudioSource aud;
+    public AudioSource aud;
 
     void Start()
     {
         this.aud = GetComponent<AudioSource>();
-
+       
     }
 
     
