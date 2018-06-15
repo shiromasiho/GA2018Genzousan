@@ -13,6 +13,8 @@ public class EnemyControl : MonoBehaviour {
     int StayFlg = 0;                            // 一時停止フラグ
     int StayCount = 120;                        // 停止時間（120 → ２秒）
 
+    PICchip pICchip;
+
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
@@ -47,6 +49,7 @@ public class EnemyControl : MonoBehaviour {
             {
                 EnemyFlg = 1;
                 StayFlg = 1;                // 停止する
+                PICchip.IC_flg = 1; //IC飛んだ
             }
         }
 

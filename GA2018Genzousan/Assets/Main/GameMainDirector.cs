@@ -11,7 +11,7 @@ public class GameMainDirector : MonoBehaviour {
     void Start()
     {
         playerHp = 1;
-        enemyHp = 30;
+        enemyHp = 60;
     }
 	// Update is called once per frame
 	void Update () {

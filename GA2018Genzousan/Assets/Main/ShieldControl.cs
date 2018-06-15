@@ -19,6 +19,7 @@ public class ShieldControl : MonoBehaviour {
     int BFC = 600;                      // バリアの回復時間
     int BF2;                            // バリアの体力の比較用
 
+    PICchip pICchip;
 
     void Start()
     {
@@ -30,12 +31,12 @@ public class ShieldControl : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))            // SPACEキーで体力減少
-        {
-            BF--;                                       // 体力減少
-            BFChange = 1;
-            BFCount = BFC;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))            // SPACEキーで体力減少
+        //{
+        //    BF--;                                       // 体力減少
+        //    BFChange = 1;
+        //    BFCount = BFC;
+        //}
 
         if (RBCount <= 1)
         {
@@ -61,6 +62,7 @@ public class ShieldControl : MonoBehaviour {
                     FireGeneratorS.GeneFlg2 = 0;
                     RBCount = 4;
                     EnemyControl.EnemyFlg = 1;                                 // ボスが動き出す
+
                     break;
             }
 
