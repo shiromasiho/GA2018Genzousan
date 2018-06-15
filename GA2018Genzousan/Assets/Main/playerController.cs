@@ -26,14 +26,16 @@ public class playerController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+      //  if (Input.GetKeyDown("q"))
+        if(PEquipment.Equipment_go ==0)
         {
+            GameMainDirector.playerHp = 2;
             playerskill = 1;
              if (playerskill == 1)
             {
-            MainSpriteRenderer.sprite = playerImg2;   //変わるんご
+            MainSpriteRenderer.sprite = playerImg;   //変わるんご
               }else{
-            MainSpriteRenderer.sprite = playerImg;
+            MainSpriteRenderer.sprite = playerImg2;
            }
         }
 

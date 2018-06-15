@@ -35,14 +35,14 @@ public class pBoost : MonoBehaviour {
 
         //ブースト・ホバー　
         if (Input.GetKey(KeyCode.Space))　//飛ぶ
-        //if(skillMng.Bustskill ==1){
+     //   if(skillMng.Bustskill ==1){
         {
             Debug.Log("青空jump");
             //    transform.position +=(Vector3.up * 30.0f * Time.deltaTime);
-            this.rigid2D.AddForce(transform.up * 400.0f * Time.deltaTime);
+            this.rigid2D.AddForce(transform.up * 600.0f * Time.deltaTime);
                 hover.gravityScale = 0;
-            }
-       //  }
+       //     }
+         }
         if (hover.gravityScale == 0)
         {
           //  transform.position += (Vector3.down * 1.7f * Time.deltaTime);
@@ -71,7 +71,11 @@ public class pBoost : MonoBehaviour {
 
         // プレイヤーの位置が画面内に収まるように制限をかける
         pos.x = Mathf.Clamp(pos.x, min.x + 1, max.x - 1);
-        pos.y = Mathf.Clamp(pos.y, min.y, max.y);
+        pos.y = Mathf.Clamp(pos.y, min.y, max.y -1);
+
+        //if (pos.y == ){
+        //    this.rigid2D.AddForce(transform.forward * 1.7f * Time.deltaTime);
+        //}
 
         // 制限をかけた値をプレイヤーの位置とする
         transform.position = pos;

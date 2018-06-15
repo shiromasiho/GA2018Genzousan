@@ -156,12 +156,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 2.431805, y: 1.2}
-  - {x: 2.443422, y: 1.2}
-  - {x: 2.349353, y: -1.1}
-  - {x: 0.3055094, y: -0.4}
-  - {x: 0.3018857, y: 0.2}
-  - {x: 2.423609, y: 1.2}
+  - {x: 2.2800002, y: 1.5420198}
+  - {x: 7.276775, y: 3.1081438}
+  - {x: 7.2267756, y: -1.8722498}
+  - {x: 0.57, y: -0.53}
+  - {x: 0.33, y: 0.5}
+  - {x: 2.395379, y: 1.5954292}
 --- !u!1 &38412146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1540,7 @@ GameObject:
   - component: {fileID: 1809536640}
   - component: {fileID: 1809536641}
   - component: {fileID: 1809536642}
+  - component: {fileID: 1809536643}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1680,11 +1681,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 6.4695053, y: 1.8958771}
+  - {x: 5.0297294, y: 1.7097521}
   - {x: 0.561038, y: 0.98389804}
   - {x: 0.893785, y: -0.8720952}
-  - {x: 6.392084, y: -1.4622182}
-  - {x: 6.39674, y: 1.9296455}
+  - {x: 5.0652323, y: -1.196326}
+  - {x: 5.02729, y: 1.7329788}
 --- !u!114 &1809536641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,6 +1721,17 @@ MonoBehaviour:
   key: 0
   sco: 0
   jmp: 0
+--- !u!114 &1809536643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1809536634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360b3b0df6b94a6438538e1c2aa0b690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1904261310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,7 +1829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1937198418
 BoxCollider2D:
   m_ObjectHideFlags: 0
