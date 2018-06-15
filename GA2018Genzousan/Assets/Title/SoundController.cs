@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour {
     public AudioClip ClickSE;
-    public AudioClip TitleBGM;
 
     public bool flgSE = false;
     AudioSource aud;
