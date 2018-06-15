@@ -7,6 +7,8 @@ public class pLight : MonoBehaviour {
     SpriteRenderer MainSpriteRenderer;
     public Sprite stocklight;//ライト
 
+    public Sprite boostImg;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -23,5 +25,16 @@ public class pLight : MonoBehaviour {
         }
         else { MainSpriteRenderer.sprite = null; 
         }   //消した
-	}
+
+        //if (skillMng.Bustskill == 0)
+        //if (Input.GetKey("t")) 
+        //{
+        //    MainSpriteRenderer.sprite = null;
+        //}
+        //else
+        //{
+        //    MainSpriteRenderer.sprite = boostImg;
+        //}
+    }
+
 }

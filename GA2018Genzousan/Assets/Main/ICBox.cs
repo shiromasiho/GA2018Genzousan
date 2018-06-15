@@ -39,7 +39,7 @@ public class ICBox : MonoBehaviour {
         {
             Destroy(gameObject);
             ICBox.GetICflg = 1;
-            Debug.Log("とったで工藤");
+       //     Debug.Log("とったで工藤");
         }
         Destroy(gameObject);
     }

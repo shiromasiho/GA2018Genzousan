@@ -32,30 +32,31 @@ public class pBoost : MonoBehaviour {
 
     void Update()
     {
-
-        //ブースト・ホバー　
-        if (Input.GetKey(KeyCode.Space))　//飛ぶ
-     //   if(skillMng.Bustskill ==1){
+        if (skillMng.Bustskill == 1)
         {
-            Debug.Log("青空jump");
-            //    transform.position +=(Vector3.up * 30.0f * Time.deltaTime);
-            this.rigid2D.AddForce(transform.up * 600.0f * Time.deltaTime);
+            //ブースト・ホバー　
+            if (Input.GetKey(KeyCode.Space))　//飛
+            {
+                Debug.Log("青空jump");
+                //    transform.position +=(Vector3.up * 30.0f * Time.deltaTime);
+                this.rigid2D.AddForce(transform.up * 600.0f * Time.deltaTime);
                 hover.gravityScale = 0;
-       //     }
-         }
-        if (hover.gravityScale == 0)
-        {
-          //  transform.position += (Vector3.down * 1.7f * Time.deltaTime);
-            this.rigid2D.AddForce(transform.forward * 1.7f * Time.deltaTime);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))//下がるやで
-        {
+                //     }
+            }
+            if (hover.gravityScale == 0)
+            {
+                //  transform.position += (Vector3.down * 1.7f * Time.deltaTime);
+                this.rigid2D.AddForce(transform.forward * 1.7f * Time.deltaTime);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))//下がるやで
+            {
 
-            hover.gravityScale = 3;
-        }
+                hover.gravityScale = 3;
+            }
 
-        // 移動制限
-        Clamp();
+            // 移動制限
+            Clamp();
+        }
     }
 
     void Clamp()　//移動制限

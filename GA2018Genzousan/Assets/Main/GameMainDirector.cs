@@ -11,17 +11,17 @@ public class GameMainDirector : MonoBehaviour {
     void Start()
     {
         playerHp = 1;
-        enemyHp = 60;
+        enemyHp = 30;
     }
 	// Update is called once per frame
 	void Update () {
-       // if (Input.GetKeyDown("a"))
-        if (enemyHp == 0)
+        if (Input.GetKeyDown("a"))
+       // if (enemyHp == 0)
         {
             SceneManager.LoadScene("Clear Scene");
         }
-       // if (Input.GetKeyDown("s"))
-        if (playerHp == 0)
+        if (Input.GetKeyDown("s"))
+       // if (playerHp == 0)
         {
             SceneManager.LoadScene("OverScene");
         }

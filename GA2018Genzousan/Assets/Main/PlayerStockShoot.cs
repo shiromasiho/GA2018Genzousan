@@ -33,7 +33,7 @@ public class PlayerStockShoot : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
 
-        if (Input.GetKeyDown("z") && bulletflg == 0 && skillMng.stockpulsskill == 2)    //stock
+        if (Input.GetKeyDown("z") && bulletflg == 0) //&& skillMng.stockpulsskill == 2)    //stock
         {
             if (other.tag == "fire")
             {
