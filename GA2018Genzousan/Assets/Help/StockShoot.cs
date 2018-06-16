@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StockShoot : MonoBehaviour {
 
+    private AudioSource CatchSe;            // キャッチSE
+    private AudioSource ReverseSe;          // 跳ね返しSE
     public int bulletflg;
     public GameObject stockbullet;
     public GameObject playerbullet;
@@ -14,6 +16,9 @@ public class StockShoot : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        CatchSe   = audioSources[0];
+        ReverseSe = audioSources[1];
         bulletflg = 1;
         stock = GameObject.Find("FireGenerator");
     }
@@ -28,6 +33,7 @@ public class StockShoot : MonoBehaviour {
             FireGenerator.Pfireflg = 1;
     //       GameObject obj = Instantiate(playerbullet) as GameObject;
             bulletflg = 0;
+            ReverseSe.PlayOneShot(ReverseSe.clip);
             Debug.Log("弾丸にゃ");
             Debug.Log("hokan" + bulletflg);
         }
@@ -39,6 +45,7 @@ public class StockShoot : MonoBehaviour {
             if (other.tag == "tama")
             {
                 Debug.Log("撃たれてんじゃねぇか！！！");
+                CatchSe.PlayOneShot(CatchSe.clip);
                 Destroy(stockbullet);
                 bulletflg = 1;
             }

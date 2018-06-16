@@ -6,11 +6,13 @@ public class fire : MonoBehaviour
 {
 
     GameObject tenguplayer;
+    //private AudioSource DamageSe;           // ダメージSE
 
     void Start()
     {
         this.tenguplayer = GameObject.Find("tenguplayer");
-        
+        //AudioSource[] audioSources = GetComponents<AudioSource>();
+        //DamageSe = audioSources[0];        
     }
 
     // Update is called once per frame
@@ -42,7 +44,9 @@ public class fire : MonoBehaviour
         //当たり判定
         private void OnCollisionEnter2D(Collision2D collision)
           {
-            Destroy(gameObject);
+            //DamageSe.PlayOneShot(DamageSe.clip);                    // 音鳴らす
+              Debug.Log("当たったで");
+              Destroy(gameObject);
           }
    }
 
