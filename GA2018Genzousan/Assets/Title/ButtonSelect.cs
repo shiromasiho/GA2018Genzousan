@@ -23,7 +23,7 @@ public class ButtonSelect : MonoBehaviour {
             GameMode = 1;
             Debug.Log(GameMode);
         }
-        if (Input.GetKeyDown(KeyCode.Z)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             ButtonClick();
         }
 	}

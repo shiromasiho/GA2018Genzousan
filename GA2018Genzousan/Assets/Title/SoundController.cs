@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour {
     public AudioClip ClickSE;
-
     public bool flgSE = false;
     AudioSource aud;
 
@@ -15,7 +14,7 @@ public class SoundController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Z) && flgSE == false) {
+        if (Input.GetKeyDown(KeyCode.Space) && flgSE == false) {
             PlaySound();
         }
 	}
