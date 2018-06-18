@@ -11,9 +11,9 @@ using System.Collections.Generic;
 public class FadeManager : MonoBehaviour
 {
 
-	#region Singleton
-
-	private static FadeManager instance;
+    #region Singleton
+    public AudioSource aud;
+    private static FadeManager instance;
 
 	public static FadeManager Instance {
 		get {
@@ -43,17 +43,21 @@ public class FadeManager : MonoBehaviour
 	public Color fadeColor = Color.black;
 
     public static string namae;
-	//public void  Awake ()
-	//{
-	//	if (this != Instance) {
-	//		Destroy (this.gameObject);
-	//		return;
-	//	}
-		
-	//	DontDestroyOnLoad (this.gameObject);
-	//}
+    //public void  Awake ()
+    //{
+    //	if (this != Instance) {
+    //		Destroy (this.gameObject);
+    //		return;
+    //	}
 
-	public void OnGUI ()
+    //	DontDestroyOnLoad (this.gameObject);
+    //}
+    private void Start()
+    {
+       
+    }
+
+    public void OnGUI ()
 	{
 	
 		// Fade .
@@ -123,7 +127,9 @@ public class FadeManager : MonoBehaviour
 		while (time <= interval) {
 			this.fadeAlpha = Mathf.Lerp (0f, 1f, time / interval);      
 			time += Time.deltaTime;
-			yield return 0;
+           
+
+            yield return 0;
 		}		
 		//シーン切替 .
 
