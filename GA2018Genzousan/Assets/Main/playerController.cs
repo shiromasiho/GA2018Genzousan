@@ -7,7 +7,7 @@ public class playerController : MonoBehaviour {
      public GameObject player;
         SpriteRenderer MainSpriteRenderer;
         Rigidbody2D rigid2D;
-        Animator animator;
+        Animator anim;
         float jumpForce = 340.0f;
         float walkForce = 30.0f;
         float maxWalkSpeed = 2.0f;
@@ -21,23 +21,33 @@ public class playerController : MonoBehaviour {
 
     void Start(){
         this.rigid2D = GetComponent<Rigidbody2D>();
+       // this.anim = GetComponent<Animator>();
+        anim = GetComponent("Animator") as Animator; 
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-      //  if (Input.GetKeyDown("q"))
-        if(PEquipment.Equipment_go ==0)
-        {
-            GameMainDirector.playerHp = 2;
-            playerskill = 1;
-             if (playerskill == 1)
+      //  if (Input.GetKeyDown("a"))
+          if (PEquipment.Equipment_go == 0)
             {
-            MainSpriteRenderer.sprite = playerImg;   //変わるんご
-              }else{
-            MainSpriteRenderer.sprite = playerImg2;
-           }
-        }
+                anim.SetBool("skillflg", false);
+                GameMainDirector.playerHp = 2;
+                playerskill = 1;
+                //if (playerskill == 1)
+                //{
+                //    MainSpriteRenderer.sprite = playerImg;   //変わるんご
+                //}
+                //else
+                //{
+                //    MainSpriteRenderer.sprite = playerImg2;
+                //}
+            }else{
+                anim.SetBool("skillflg", true);
+            }
+
+
+
 
             //ジャンプ
             Ground = transform.position.y;
@@ -69,6 +79,7 @@ public class playerController : MonoBehaviour {
             {
                 this.rigid2D.AddForce(transform.right * Key * this.walkForce);
             }
-       
+        //anime
+            this.anim.speed = speedx / 2.0f;
     }
 }

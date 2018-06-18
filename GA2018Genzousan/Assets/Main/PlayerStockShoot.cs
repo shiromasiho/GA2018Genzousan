@@ -29,7 +29,7 @@ public class PlayerStockShoot : MonoBehaviour {
             //       GameObject obj = Instantiate(playerbullet) as GameObject;
             bulletflg--;
             Debug.Log("弾丸にゃ");
-            stockImgflg = 0;
+            stockImgflg = 1;
         }
     }
     void OnTriggerStay2D(Collider2D other)

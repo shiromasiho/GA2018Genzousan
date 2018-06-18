@@ -11,13 +11,13 @@ public class GameMainDirector : MonoBehaviour {
     void Start()
     {
         playerHp = 1;
-        enemyHp = 60;
+        enemyHp = 30;
     }
 	// Update is called once per frame
 	void Update () {
         if (enemyHp <= 0)
         {
-            SceneManager.LoadScene("Clear Scene");
+            SceneManager.LoadScene("ClearScene");
         }
       //  if (Input.GetKeyDown("s"))
         if (playerHp <= 0)

@@ -6,7 +6,7 @@ public class pStockImg : MonoBehaviour {
 
 
     SpriteRenderer MainSpriteRenderer;
-    public Sprite stockImg;//ライト
+    public Sprite stockImg;//fireImg
 
     // Use this for initialization
     void Start()
@@ -20,8 +20,8 @@ public class pStockImg : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        if (PlayerStockShoot.stockImgflg == 1)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
+      //  if (Input.GetKey("z")) 
+       if (PlayerStockShoot.stockImgflg == 0)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
         {
             MainSpriteRenderer.sprite = stockImg;
             Debug.Log("うつれや");

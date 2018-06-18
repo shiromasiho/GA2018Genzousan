@@ -39,10 +39,15 @@ public class EnemyBullet : MonoBehaviour {
     {
         if (collision.gameObject.name == "player")
         {
+            if(GameMainDirector.playerHp > 0){
             GameMainDirector.playerHp = GameMainDirector.playerHp--;  //死ぬやで
-            Debug.Log("死ぬやで");
             PEquipment.Equipment_flg = 1;//装備飛んだ
             Destroy(wasi);
+            Debug.Log("プレイヤー残機数" + GameMainDirector.playerHp);
+           }else{
+                GameMainDirector.playerHp =0;
+                Debug.Log("プレイヤー残機数" + GameMainDirector.playerHp);
+           }
         }
         if (collision.gameObject.tag == "fire")
         {
