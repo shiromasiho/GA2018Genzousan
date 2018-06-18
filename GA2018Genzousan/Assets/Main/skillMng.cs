@@ -7,7 +7,9 @@ public class skillMng : MonoBehaviour {
     SpriteRenderer MainSpriteRenderer;
     // publicで宣言し、inspectorで設定可能にする
     public Sprite DimskillImg;  //暗転機能画像
-    int Time = 600;                      // 時間
+    int Time = 600;      // 時間
+
+    public Sprite boostImg;
 
     public static int jumpskill =1;
     public static int Continuous_shootingskill =1;
@@ -28,7 +30,7 @@ public class skillMng : MonoBehaviour {
 	void Update () {
         //Jump
 		  if (PICchip.Jumpflg == 1){
-              jumpskill =2;
+              jumpskill =120;
           }else{
               jumpskill =1;
           }
@@ -50,8 +52,10 @@ public class skillMng : MonoBehaviour {
           if (PEquipment.Bustflg == 1)
           {
               Bustskill = 1;
+              MainSpriteRenderer.sprite = boostImg;
           }else{
               Bustskill =0;
+              MainSpriteRenderer.sprite = null; 
           }
 
           //範囲大

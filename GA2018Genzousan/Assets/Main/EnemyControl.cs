@@ -15,6 +15,15 @@ public class EnemyControl : MonoBehaviour {
 
     PICchip pICchip;
 
+    //体力で絵が変わる
+    SpriteRenderer MainSpriteRenderer;
+    BoxCollider2D Shield_ObjectCollider;
+    public Sprite enemyImg1;
+    public Sprite enemyImg2;
+    public Sprite enemyImg3;
+    public Sprite enemyImg4;
+
+
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
@@ -77,5 +86,26 @@ public class EnemyControl : MonoBehaviour {
         }
 
         transform.position = pos;                       // enemyの座標変更
+
+        switch (GameMainDirector.enemyHp)
+        {
+            case 60:
+                MainSpriteRenderer.sprite = enemyImg1;         // 第１段階のバリア描画
+                Shield_ObjectCollider.isTrigger = false;                 // 当たり判定実装
+                break;
+
+            case 30:
+                MainSpriteRenderer.sprite = enemyImg2;         // 第２段階のバリア描画
+                break;
+
+            case 10:
+                MainSpriteRenderer.sprite = enemyImg3;         // 第３段階のバリア描画
+                break;
+            case 1:
+                MainSpriteRenderer.sprite = enemyImg4;         // 第３段階のバリア描画
+                break;
+
+        }
+
     }
 }

@@ -193,10 +193,10 @@ public class PEquipment : MonoBehaviour
             stockflg = 0;
            
             Equipment_flg = 0;
-            Debug.Log("aaaa" + Equipment_go);
-            Debug.Log("ブースト" + Bustflg);
-            Debug.Log("範囲大" + Range_Largeflg);
-            Debug.Log("ストック" + stockflg);
+            //Debug.Log("aaaa" + Equipment_go);
+            //Debug.Log("ブースト" + Bustflg);
+            //Debug.Log("範囲大" + Range_Largeflg);
+            //Debug.Log("ストック" + stockflg);
             Debug.Log("装備を消したい！！");
         }
     }

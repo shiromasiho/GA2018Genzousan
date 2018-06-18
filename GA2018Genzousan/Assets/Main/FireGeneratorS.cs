@@ -33,8 +33,9 @@ public class FireGeneratorS : MonoBehaviour {
                 this.delta = 0;
                 go = Instantiate(firePrefab) as GameObject;
 
-                int py = Random.Range(-2, -4);
+                float py = Random.Range(-2, -5);
                 go.transform.position = new Vector3(1, py, 0); //炎の位置
+                
 
             }
             if (Pfireflg == 1)  //プレイヤーファイア

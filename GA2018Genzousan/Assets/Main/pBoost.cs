@@ -74,7 +74,7 @@ public class pBoost : MonoBehaviour {
         pos.x = Mathf.Clamp(pos.x, min.x + 1, max.x - 1);
         pos.y = Mathf.Clamp(pos.y, min.y, max.y -1);
 
-        //if (pos.y == ){
+        //if (pos.y == -2){
         //    this.rigid2D.AddForce(transform.forward * 1.7f * Time.deltaTime);
         //}
 

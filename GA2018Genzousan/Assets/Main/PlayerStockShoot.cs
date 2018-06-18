@@ -8,6 +8,7 @@ public class PlayerStockShoot : MonoBehaviour {
     public GameObject stockbullet;
     public GameObject playerbullet;
     GameObject stock;
+    public static int stockImgflg;
 
     public static int GetEquipmentflg = 0;    //装備をゲットした時のflg
     // Use this for initialization
@@ -28,6 +29,7 @@ public class PlayerStockShoot : MonoBehaviour {
             //       GameObject obj = Instantiate(playerbullet) as GameObject;
             bulletflg--;
             Debug.Log("弾丸にゃ");
+            stockImgflg = 0;
         }
     }
     void OnTriggerStay2D(Collider2D other)
@@ -40,15 +42,20 @@ public class PlayerStockShoot : MonoBehaviour {
                 Debug.Log("撃たれてんじゃねぇか！！！");
                 Destroy(stockbullet);
                 bulletflg = 1;
+                stockImgflg = 0;
             }
             if(other.tag =="enemy")
             {
                 Debug.Log("くたばれ！！");
                 PlayerStockShoot.GetEquipmentflg = 1;
+                Debug.Log("HP" + GameMainDirector.enemyHp);
 
-                if(skillMng.Continuous_shootingskill == 2){
-                    GameMainDirector.enemyHp = GameMainDirector.enemyHp -3;
-                }else{
+                if (skillMng.Continuous_shootingskill == 2)
+                {
+                    GameMainDirector.enemyHp = GameMainDirector.enemyHp - 3;
+                }
+                else
+                {
                     GameMainDirector.enemyHp--;
                 }
             }
