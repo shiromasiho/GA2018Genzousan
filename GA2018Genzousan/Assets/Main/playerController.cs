@@ -32,7 +32,7 @@ public class playerController : MonoBehaviour {
           if (PEquipment.Equipment_go == 0)
             {
                 anim.SetBool("skillflg", false);
-                GameMainDirector.playerHp = 2;
+               
                 playerskill = 1;
                 //if (playerskill == 1)
                 //{
@@ -44,6 +44,7 @@ public class playerController : MonoBehaviour {
                 //}
             }else{
                 anim.SetBool("skillflg", true);
+                GameMainDirector.playerHp =2;
             }
 
 

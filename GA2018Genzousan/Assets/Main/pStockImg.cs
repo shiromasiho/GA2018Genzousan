@@ -24,7 +24,6 @@ public class pStockImg : MonoBehaviour {
        if (PlayerStockShoot.stockImgflg == 0)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
         {
             MainSpriteRenderer.sprite = stockImg;
-            Debug.Log("うつれや");
         }
         else
         {
