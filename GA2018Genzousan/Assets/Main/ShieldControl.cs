@@ -18,6 +18,7 @@ public class ShieldControl : MonoBehaviour {
     int BFCount;                        // バリアの時間回復変数
     int BFC = 600;                      // バリアの回復時間
     int BF2;                            // バリアの体力の比較用
+    int SoundOn = 0;
 
     PICchip pICchip;
 
