@@ -32,7 +32,7 @@ public class FireGenerator : MonoBehaviour {
             this.delta = 0;
             go = Instantiate(firePrefab) as GameObject;
             // int px = Random.Range(-3, 4);
-            go.transform.position = new Vector3(20, -4, 0); //炎の位置
+            go.transform.position = new Vector3(16, -4, 0); //炎の位置
         }
 
 
