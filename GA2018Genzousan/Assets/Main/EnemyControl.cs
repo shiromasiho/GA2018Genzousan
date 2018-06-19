@@ -13,6 +13,16 @@ public class EnemyControl : MonoBehaviour {
     int StayFlg = 0;                            // 一時停止フラグ
     int StayCount = 120;                        // 停止時間（120 → ２秒）
 
+    PICchip pICchip;
+
+    //体力で絵が変わる
+    SpriteRenderer MainSpriteRenderer;
+    public Sprite enemyImg1;
+    public Sprite enemyImg2;
+    public Sprite enemyImg3;
+    public Sprite enemyImg4;
+
+
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
@@ -22,6 +32,27 @@ public class EnemyControl : MonoBehaviour {
 
     void Update()
     {
+
+        switch (GameMainDirector.enemyHp)
+        {
+            case 60:
+                MainSpriteRenderer.sprite = enemyImg1;         // 第１段階
+                break;
+
+            case 30:
+                MainSpriteRenderer.sprite = enemyImg2;         // 第２段階
+                break;
+
+            case 10:
+                MainSpriteRenderer.sprite = enemyImg3;         // 第３段階
+                break;
+            case 1:
+                MainSpriteRenderer.sprite = enemyImg4;         // 第4段階
+                break;
+
+        }
+
+
         Vector3 pos = transform.position;
 
         if (EnemyFlg == 0) Enemy_ObjectCollider.isTrigger = true;                  // 当たり判定解除
@@ -47,6 +78,7 @@ public class EnemyControl : MonoBehaviour {
             {
                 EnemyFlg = 1;
                 StayFlg = 1;                // 停止する
+                PICchip.IC_flg = 1; //IC飛んだ
             }
         }
 
@@ -74,5 +106,6 @@ public class EnemyControl : MonoBehaviour {
         }
 
         transform.position = pos;                       // enemyの座標変更
+
     }
 }

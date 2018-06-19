@@ -52,7 +52,7 @@ public class tamesi : MonoBehaviour {
         //ブースト・ホバー
         if(Input.GetKey(KeyCode.Space))
         {
-            transform.position += (Vector3.up * 30.0f * Time.deltaTime);
+            transform.position +=(Vector3.up * 30.0f * Time.deltaTime);
             hover.gravityScale = 0;
         }
         if (hover.gravityScale == 0)

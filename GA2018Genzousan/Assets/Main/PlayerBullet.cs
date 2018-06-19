@@ -21,6 +21,7 @@ public class PlayerBullet : MonoBehaviour {
         //破棄
         if (transform.position.x > 2.0f){
             Destroy(gameObject);
+            ShieldControl.BF--;
         }
 
     }

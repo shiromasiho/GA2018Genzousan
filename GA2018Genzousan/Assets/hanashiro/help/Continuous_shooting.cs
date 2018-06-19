@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Continuous_shooting : MonoBehaviour {
 
-    static int Continuous_shootingflg=1;    //＊＊確認用範囲大フラグ
     GameObject edge;    //範囲大collider呼び出し
 
     // Use this for initialization
@@ -17,14 +16,16 @@ public class Continuous_shooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (/*IC_Bullet.*/Continuous_shootingflg == 1)  //範囲大フラグが立っているとき
+        if (PEquipment.Range_Largeflg == 1)  //範囲大フラグが立っているとき
         {
+            Debug.Log("世知辛い");
             GetComponent<EdgeCollider2D>().enabled = false; //通常判定をfalse
             edge.GetComponent<EdgeCollider2D>().enabled = true; //範囲大判定をtrue
         }
         //立っていないとき
         else
         {
+            
             edge.GetComponent<EdgeCollider2D>().enabled = false;    //通常判定をfalse
             GetComponent<EdgeCollider2D>().enabled = true;  //範囲大判定をtrue
 

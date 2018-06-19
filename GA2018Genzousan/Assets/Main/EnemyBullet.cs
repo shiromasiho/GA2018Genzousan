@@ -11,6 +11,8 @@ public class EnemyBullet : MonoBehaviour {
     GameObject gamemaindirector;    //変数呼ぶんご
     GameMainDirector maindirector;
 
+    PEquipment equipment;
+
 
     void Start()
     {
@@ -35,11 +37,13 @@ public class EnemyBullet : MonoBehaviour {
     //全員消す
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "player")
+        if (collision.gameObject.tag == "Player")
         {
-          //   GameMainDirector.playerHp = GameMainDirector.playerHp -1;  //死ぬやで
-            Debug.Log("死ぬやで");
+            DamageM.DamageF = 1;
+            GameMainDirector.playerHp--;  //死ぬやで
+            PEquipment.Equipment_flg = 1;//装備飛んだ
             Destroy(wasi);
+            Debug.Log("プレイヤー残機数" + GameMainDirector.playerHp);
         }
         if (collision.gameObject.tag == "fire")
         {

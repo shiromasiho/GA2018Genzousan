@@ -10,7 +10,6 @@ public class fire : MonoBehaviour
     void Start()
     {
         this.tenguplayer = GameObject.Find("tenguplayer");
-        
     }
 
     // Update is called once per frame
@@ -20,7 +19,7 @@ public class fire : MonoBehaviour
         transform.Translate(-0.1f, 0, 0);
 
         //画面外に出たら破棄
-        if (transform.position.x < 10.5f)
+        if (transform.position.x < 7.5f)
         {
             Destroy(gameObject);
         }
@@ -42,7 +41,9 @@ public class fire : MonoBehaviour
         //当たり判定
         private void OnCollisionEnter2D(Collision2D collision)
           {
-            Destroy(gameObject);
+              Damage.DamageFlg = 1;
+              Debug.Log("当たったで");
+              Destroy(gameObject);
           }
    }
 

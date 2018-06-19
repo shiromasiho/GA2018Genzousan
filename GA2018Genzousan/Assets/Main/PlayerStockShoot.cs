@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class PlayerStockShoot : MonoBehaviour {
 
+    private AudioSource CatchS;            // キャッチSE
+    private AudioSource ReverseS;          // 跳ね返しSE
     public int bulletflg;
     public GameObject stockbullet;
     public GameObject playerbullet;
     GameObject stock;
+    public static int stockImgflg;
 
-    public static int stockflg;    //stockflg (弾連射）
-
+    public static int GetEquipmentflg = 0;    //装備をゲットした時のflg
     // Use this for initialization
     void Start()
     {
-        stockflg = 1;
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        CatchS = audioSources[0];
+        ReverseS = audioSources[1];
         bulletflg = 1;
         stock = GameObject.Find("FireGenerator");
     }
@@ -23,33 +27,52 @@ public class PlayerStockShoot : MonoBehaviour {
     void Update()
     {
         stockbullet = this.stock.GetComponent<FireGeneratorS>().go;
-        if (Input.GetKeyDown("x") && bulletflg == 1)  //shoot
+        if (Input.GetKeyDown("x") && bulletflg !=0)  //shoot
         {
             Instantiate(playerbullet);
             FireGeneratorS.Pfireflg = 1;
             //       GameObject obj = Instantiate(playerbullet) as GameObject;
-            bulletflg = 0;
+            bulletflg--;
+            ReverseS.PlayOneShot(ReverseS.clip);        // 跳ね返しSE
             Debug.Log("弾丸にゃ");
-            Debug.Log("hokan" + bulletflg);
+            stockImgflg = 1;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (Input.GetKeyDown("z") && bulletflg == 0 && stockflg==0)    //stock
+
+        if (Input.GetKeyDown("z") && bulletflg == 0) //&& skillMng.stockpulsskill == 2)    //stock
         {
             if (other.tag == "fire")
             {
                 Debug.Log("撃たれてんじゃねぇか！！！");
+                CatchS.PlayOneShot(CatchS.clip);        // 吸収SE
                 Destroy(stockbullet);
                 bulletflg = 1;
+                stockImgflg = 0;
+            }
+            if(other.tag =="enemy")
+            {
+                Debug.Log("くたばれ！！");
+                PlayerStockShoot.GetEquipmentflg = 1;
+                Debug.Log("HP" + GameMainDirector.enemyHp);
+
+                if (skillMng.Continuous_shootingskill == 2)
+                {
+                    GameMainDirector.enemyHp = GameMainDirector.enemyHp - 3;
+                }
+                else
+                {
+                    GameMainDirector.enemyHp--;
+                }
             }
         }
-        else if (Input.GetKeyDown("z") && stockflg == 1)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
+        else if (Input.GetKeyDown("z") && skillMng.stockpulsskill == 2)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
         {
             if (other.tag == "fire")
             {
 
-                bulletflg++;
+                bulletflg =2;
                 Debug.Log("撃たれてんじゃねぇかyo！！！" + bulletflg);
                 Destroy(stockbullet);
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireGeneratorS : MonoBehaviour {
 
-
+    private AudioSource EFMS;           // 敵の弾SE
     public GameObject firePrefab;
     float span = 2.0f;
     float delta = 0;
@@ -21,6 +21,12 @@ public class FireGeneratorS : MonoBehaviour {
     public static int ICfireflg = 0;    //IC
     public static int GeneFlg2 = 1;
 
+    void Start()
+    {
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        EFMS = audioSources[0];
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,11 +36,13 @@ public class FireGeneratorS : MonoBehaviour {
             this.delta += Time.deltaTime;
             if (this.delta > this.span)
             { //エネミーファイア
+                EFMS.PlayOneShot(EFMS.clip);                    // 音鳴らす
                 this.delta = 0;
                 go = Instantiate(firePrefab) as GameObject;
 
-                int py = Random.Range(-2, -4);
+                float py = Random.Range(-2, -5);
                 go.transform.position = new Vector3(1, py, 0); //炎の位置
+                
 
             }
             if (Pfireflg == 1)  //プレイヤーファイア

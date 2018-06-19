@@ -25,11 +25,13 @@ public class Equipskill_1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Equipment.Equipment_go == 1)    //１回目に出る装備
+        if (PEquipment.Equipment_go == 1 || PEquipment.riseto==1)    //１回目に出る装備
         {
-            switch (Equipment.GameMode)
+            switch (PEquipment.GameMode)
             {
                 case 0:
+                    MainSpriteRenderer.sprite = null;   //消した
+                   
                     break;
                 case 1:
                     MainSpriteRenderer.sprite = Bust;   //spriteを入れ替える
