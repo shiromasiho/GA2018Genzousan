@@ -39,6 +39,7 @@ public class EnemyBullet : MonoBehaviour {
     {
         if (collision.gameObject.name == "player")
         {
+            DamageM.DamageF = 1;
             if(GameMainDirector.playerHp > 0){
             GameMainDirector.playerHp = GameMainDirector.playerHp--;  //死ぬやで
             PEquipment.Equipment_flg = 1;//装備飛んだ
