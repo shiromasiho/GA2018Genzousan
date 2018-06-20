@@ -32,27 +32,6 @@ public class EnemyControl : MonoBehaviour {
 
     void Update()
     {
-
-        switch (GameMainDirector.enemyHp)
-        {
-            case 60:
-                MainSpriteRenderer.sprite = enemyImg1;         // 第１段階
-                break;
-
-            case 30:
-                MainSpriteRenderer.sprite = enemyImg2;         // 第２段階
-                break;
-
-            case 10:
-                MainSpriteRenderer.sprite = enemyImg3;         // 第３段階
-                break;
-            case 1:
-                MainSpriteRenderer.sprite = enemyImg4;         // 第4段階
-                break;
-
-        }
-
-
         Vector3 pos = transform.position;
 
         if (EnemyFlg == 0) Enemy_ObjectCollider.isTrigger = true;                  // 当たり判定解除
@@ -107,5 +86,12 @@ public class EnemyControl : MonoBehaviour {
 
         transform.position = pos;                       // enemyの座標変更
 
+    }
+        void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "player")
+        {
+            GameMainDirector.playerHp =0;
+        }
     }
 }

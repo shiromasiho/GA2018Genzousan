@@ -6,6 +6,7 @@ public class pLight : MonoBehaviour {
     
     SpriteRenderer MainSpriteRenderer;
     public Sprite stocklight;//ライト
+    public Sprite stocklight2;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,15 @@ public class pLight : MonoBehaviour {
 	void Update () {
         if (Input.GetKey("z"))    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
         {
-            MainSpriteRenderer.sprite = stocklight;
+            if (PEquipment.Range_Largeflg == 0)
+            {
+
+                MainSpriteRenderer.sprite = stocklight;
+            }
+            else
+            {
+                MainSpriteRenderer.sprite = stocklight2;
+            }
         }
         else { MainSpriteRenderer.sprite = null; 
         }   //消した
