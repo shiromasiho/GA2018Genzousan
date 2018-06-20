@@ -8,12 +8,14 @@ public class PICchip : MonoBehaviour {
     public static int Dimflg; //暗転
     int box;    //ランダム格納
     public static int IC_go;    //装備回数カウント
-    public static int GameMode = 0;
-    public static int IC_flg = 0;
+    public static int GameMode;
+    public static int IC_flg;
     public static int riseto;
     // Use this for initialization
     void Start()
     {
+        GameMode = 0;
+        IC_flg = 0;
 
     }
 

@@ -12,7 +12,7 @@ public class PlayerStockShoot : MonoBehaviour {
     GameObject stock;
     public static int stockImgflg;
 
-    public static int GetEquipmentflg = 0;    //装備をゲットした時のflg
+    public static int GetEquipmentflg;    //装備をゲットした時のflg
     // Use this for initialization
     void Start()
     {
@@ -21,6 +21,7 @@ public class PlayerStockShoot : MonoBehaviour {
         ReverseS = audioSources[1];
         bulletflg = 1;
         stock = GameObject.Find("FireGenerator");
+        GetEquipmentflg = 0;
     }
 
     // Update is called once per frame
@@ -41,7 +42,33 @@ public class PlayerStockShoot : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
 
-        if (Input.GetKeyDown("z") && bulletflg == 0) //&& skillMng.stockpulsskill == 2)    //stock
+        
+        if (Input.GetKeyDown("z") && skillMng.stockpulsskill == 2)
+        {
+            if (other.tag == "fire")
+            {
+
+                bulletflg =2;
+                Debug.Log("撃たれてんじゃねぇかyo！！！" + bulletflg);
+                Destroy(stockbullet);
+            }
+            if (other.tag == "enemy")
+            {
+                Debug.Log("くたばれ！！");
+                PlayerStockShoot.GetEquipmentflg = 1;
+                Debug.Log("HP" + GameMainDirector.enemyHp);
+                if (skillMng.Continuous_shootingskill == 2)
+                {
+                    GameMainDirector.enemyHp = GameMainDirector.enemyHp - 3;
+                }
+                else
+                {
+                    GameMainDirector.enemyHp--;
+                }
+            }
+
+        }
+        else if (Input.GetKeyDown("z")) //&& skillMng.stockpulsskill == 2)    //stock
         {
             if (other.tag == "fire")
             {
@@ -51,7 +78,7 @@ public class PlayerStockShoot : MonoBehaviour {
                 bulletflg = 1;
                 stockImgflg = 0;
             }
-            if(other.tag =="enemy")
+             if (other.tag == "enemy")
             {
                 Debug.Log("くたばれ！！");
                 PlayerStockShoot.GetEquipmentflg = 1;
@@ -65,16 +92,6 @@ public class PlayerStockShoot : MonoBehaviour {
                 {
                     GameMainDirector.enemyHp--;
                 }
-            }
-        }
-        else if (Input.GetKeyDown("z") && skillMng.stockpulsskill == 2)    //連射フラグが立っている場合のストック処理（１つのストックの時でも打てる）
-        {
-            if (other.tag == "fire")
-            {
-
-                bulletflg =2;
-                Debug.Log("撃たれてんじゃねぇかyo！！！" + bulletflg);
-                Destroy(stockbullet);
             }
         }
     }

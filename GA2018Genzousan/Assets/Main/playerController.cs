@@ -15,7 +15,7 @@ public class playerController : MonoBehaviour {
         float Ground = 0.0f;
         float jumpKey = 0;
 
-        public static int playerskill = 0;
+        public static int playerskill;
         public Sprite playerImg;
         public Sprite playerImg2;
 
@@ -24,24 +24,26 @@ public class playerController : MonoBehaviour {
        // this.anim = GetComponent<Animator>();
         anim = GetComponent("Animator") as Animator; 
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        playerskill = 0;
     }
 
     void Update()
     {
-      //  if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("a"))
+        //if (playerskill == 1)
+        {
+            MainSpriteRenderer.sprite = playerImg;   //変わるんご
+            Debug.Log("わん");
+        }
+        else
+        {
+            MainSpriteRenderer.sprite = playerImg2;
+        }
           if (PEquipment.Equipment_go == 0)
             {
                 anim.SetBool("skillflg", false);
                
                 playerskill = 1;
-                //if (playerskill == 1)
-                //{
-                //    MainSpriteRenderer.sprite = playerImg;   //変わるんご
-                //}
-                //else
-                //{
-                //    MainSpriteRenderer.sprite = playerImg2;
-                //}
             }else{
                 anim.SetBool("skillflg", true);
                 GameMainDirector.playerHp =2;
