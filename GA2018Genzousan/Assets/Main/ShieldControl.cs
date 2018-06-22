@@ -12,13 +12,13 @@ public class ShieldControl : MonoBehaviour {
     public Sprite Shield4Prefab;
 
     // 自作
-    public static int BF = 3;           // バリアの体力
-    public static int RBCount = 0;      // バリア再配置カウント
-    public static int BFChange = 0;     // バリアの回復処理入り (体力が１から２へ移行した時に、もう１０秒カウントする)
+    public static int BF;           // バリアの体力
+    public static int RBCount;      // バリア再配置カウント
+    public static int BFChange;     // バリアの回復処理入り (体力が１から２へ移行した時に、もう１０秒カウントする)
     int BFCount;                        // バリアの時間回復変数
-    int BFC = 600;                      // バリアの回復時間
+    int BFC;                      // バリアの回復時間
     int BF2;                            // バリアの体力の比較用
-    int SoundOn = 0;
+    int SoundOn;
 
     PICchip pICchip;
 
@@ -27,6 +27,11 @@ public class ShieldControl : MonoBehaviour {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         Shield_ObjectCollider = gameObject.GetComponent<BoxCollider2D>();
         Shield_ObjectCollider.isTrigger = false;
+        BF = 3;
+        RBCount = 0;
+        BFChange = 0;
+        BFC = 600;
+        SoundOn = 0;
     }
 
     void Update()

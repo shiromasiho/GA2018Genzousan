@@ -7,8 +7,8 @@ public class DamageM : MonoBehaviour
 
     private AudioSource DamageSeM;          // ダメージSE
     private AudioSource IcSe;               // ICチップSE
-    public static int DamageF = 0;
-    public static int ICF = 0;
+    public static int DamageF;
+    public static int ICF;
 
     // Use this for initialization
     void Start()
@@ -16,6 +16,9 @@ public class DamageM : MonoBehaviour
         AudioSource[] audioSources = GetComponents<AudioSource>();
         DamageSeM = audioSources[0];
         IcSe = audioSources[1];
+        DamageF = 0;
+        ICF = 0;
+
     }
 
     // Update is called once per frame

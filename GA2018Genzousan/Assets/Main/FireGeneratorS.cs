@@ -6,8 +6,8 @@ public class FireGeneratorS : MonoBehaviour {
 
     private AudioSource EFMS;           // 敵の弾SE
     public GameObject firePrefab;
-    float span = 2.0f;
-    float delta = 0;
+    float span;
+    float delta;
     public GameObject go;
     public GameObject playerfirefab;
     public GameObject go2;
@@ -15,17 +15,28 @@ public class FireGeneratorS : MonoBehaviour {
     public static int GeneFlg = 1; //弾の生成フラグ
 
     public GameObject ICPrefab;
-    float span2 = 7.0f;
-    float delta2 = 0;
+    float span2;
+    float delta2;
     public GameObject ICgo;
-    public static int ICfireflg = 0;    //IC
-    public static int GeneFlg2 = 1;
+    public static int ICfireflg;    //IC
+    public static int GeneFlg2;
 
     void Start()
     {
         AudioSource[] audioSources = GetComponents<AudioSource>();
         EFMS = audioSources[0];
+
+        span = 2.0f;
+        delta = 0;
+        Pfireflg = 0;
+        GeneFlg = 1; //弾の生成フラグ
+
+        span2 = 7.0f;
+        delta2 = 0;
+        ICfireflg = 0;
+        GeneFlg2 = 1; //弾の生成フラグ
     }
+
 
     // Update is called once per frame
     void Update()

@@ -194,10 +194,6 @@ public class PICchip : MonoBehaviour {
             Dimflg = 0;
 
             IC_flg = 0;
-            Debug.Log("aaaa" + IC_go);
-            Debug.Log("ジャンプ" + Jumpflg);
-            Debug.Log("3連射" + Continuous_shootingflg);
-            Debug.Log("暗転" + Dimflg);
             Debug.Log("ICを消したい！！");
         }
     }

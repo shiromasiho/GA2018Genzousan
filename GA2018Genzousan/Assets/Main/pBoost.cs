@@ -15,9 +15,9 @@ public class pBoost : MonoBehaviour {
     public float cooltime = 1.0f; //クールタイムの秒数
 
     //変数    
-    public float count = 0; //クールタイム初期化
+    public float count; //クールタイム初期化
     private Vector3 moveDirection = Vector3.zero;
-    public bool boost = true; //ブーストflag
+    public bool boost; //ブーストflag
     public int key; //左右移動
     public int sco; //燃料タンク
     public int jmp;
@@ -28,6 +28,10 @@ public class pBoost : MonoBehaviour {
         this.rigid2D = GetComponent<Rigidbody2D>();
         hover = GetComponent<Rigidbody2D>();
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        speedRunner = 2.0f;
+        count = 0;
+        boost = true;
     }
 
     void Update()

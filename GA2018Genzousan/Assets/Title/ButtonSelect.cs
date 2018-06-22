@@ -9,6 +9,12 @@ public class ButtonSelect : MonoBehaviour {
     FadeManager FadeManager;
     // Use this for initialization
     void Start () {
+        PEquipment.Equipment_go = 0;
+        PEquipment.stockflg = 0;
+        PEquipment.Bustflg = 0;
+
+        PlayerStockShoot.stockImgflg = 0;
+
     }
 	
 	// Update is called once per frame

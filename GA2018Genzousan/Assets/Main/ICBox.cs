@@ -10,12 +10,14 @@ public class ICBox : MonoBehaviour {
     GameObject gamemaindirector;    //変数呼ぶんご
     GameMainDirector maindirector;
 
-    public static int GetICflg = 0;    //ICスキルをゲットした時のflg
-    public static int ICflg = 0;        //ICのスキル(randam)
+    public static int GetICflg;    //ICスキルをゲットした時のflg
+    public static int ICflg;      //ICのスキル(randam)
 
     void Start()
     {
         this.player = GameObject.Find("player");
+        GetICflg = 0;
+        ICflg = 0;
 
     }
 

@@ -9,6 +9,16 @@ public class ButtonController : MonoBehaviour
     public string GameScene;
     FadeManager FadeManager;
 
+    void Start()
+    {
+        PEquipment.Equipment_go = 0;
+        PEquipment.stockflg = 0;
+        PEquipment.Bustflg = 0;
+
+        PlayerStockShoot.stockImgflg = 0;
+
+    }
+
     public void ButtonClick()
     {
 

@@ -7,11 +7,11 @@ public class EnemyControl : MonoBehaviour {
     Rigidbody2D rigid2D;
     Animator animator;
     BoxCollider2D Enemy_ObjectCollider;
-    float Enemymove = 0.02f;                    // １フレームで動く単位
-    float Enemypos = 6.34f;                      // enemyの初期ポジションｘ
-    public static int EnemyFlg = 0;            // 動くフラグ（０→動かない、１→手前へ、２→奥へ）
-    int StayFlg = 0;                            // 一時停止フラグ
-    int StayCount = 120;                        // 停止時間（120 → ２秒）
+    float Enemymove;                    // １フレームで動く単位
+    float Enemypos;                      // enemyの初期ポジションｘ
+    public static int EnemyFlg;            // 動くフラグ
+    int StayFlg;                            // 一時停止フラグ
+    int StayCount;                        // 停止時間
 
     PICchip pICchip;
 
@@ -21,6 +21,7 @@ public class EnemyControl : MonoBehaviour {
     public Sprite enemyImg2;
     public Sprite enemyImg3;
     public Sprite enemyImg4;
+    public static int enemyImgD; //enemyのダメージ
 
 
     void Start()
@@ -28,16 +29,22 @@ public class EnemyControl : MonoBehaviour {
         this.rigid2D = GetComponent<Rigidbody2D>();
         Enemy_ObjectCollider = gameObject.GetComponent<BoxCollider2D>();
         Enemy_ObjectCollider.isTrigger = false;
+
+        Enemymove = 0.02f;        // １フレームで動く単位
+        Enemypos = 6.34f;
+        EnemyFlg = 0;            //（０→動かない、１→手前へ、２→奥へ）
+        StayFlg = 0;
+        StayCount = 120;             // （120 → ２秒）
     }
 
     void Update()
     {
-        Vector3 pos = transform.position;
 
+        Vector3 pos = transform.position;
+        enemyImgD = GameMainDirector.enemyHp;
+      
         if (EnemyFlg == 0) Enemy_ObjectCollider.isTrigger = true;                  // 当たり判定解除
         else               Enemy_ObjectCollider.isTrigger = false;                 // 当たり判定実装
-
-
 
 
         if ((pos.x >= (Enemypos - 3)) && (EnemyFlg == 1) && (StayFlg == 0))
@@ -85,13 +92,6 @@ public class EnemyControl : MonoBehaviour {
         }
 
         transform.position = pos;                       // enemyの座標変更
+    }
 
-    }
-        void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "player")
-        {
-            GameMainDirector.playerHp =0;
-        }
-    }
 }
