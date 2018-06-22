@@ -7,7 +7,7 @@ public class playerController : MonoBehaviour {
      public GameObject player;
         SpriteRenderer MainSpriteRenderer;
         Rigidbody2D rigid2D;
-        Animator anim;
+        Animator animator;
         float jumpForce = 340.0f;
         float walkForce = 30.0f;
         float maxWalkSpeed = 2.0f;
@@ -21,8 +21,8 @@ public class playerController : MonoBehaviour {
 
     void Start(){
         this.rigid2D = GetComponent<Rigidbody2D>();
-       // this.anim = GetComponent<Animator>();
-        anim = GetComponent("Animator") as Animator; 
+        this.animator = GetComponent<Animator>();
+     //   animator = GetComponent("Animator") as Animator; 
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         playerskill = 0;
     }
@@ -32,6 +32,7 @@ public class playerController : MonoBehaviour {
         if (Input.GetKeyDown("a"))
         //if (playerskill == 1)
         {
+
             MainSpriteRenderer.sprite = playerImg;   //変わるんご
             Debug.Log("わん");
         }
@@ -41,24 +42,22 @@ public class playerController : MonoBehaviour {
         }
           if (PEquipment.Equipment_go == 0)
             {
-                anim.SetBool("skillflg", false);
+                animator.SetBool("skillflg", false);
                
                 playerskill = 1;
             }else{
-                anim.SetBool("skillflg", true);
+                animator.SetBool("skillflg", true);
                 GameMainDirector.playerHp =2;
             }
-
-
-
 
             //ジャンプ
             Ground = transform.position.y;
 
-            if ((jumpKey == 1) && (Ground <= -3.7)) jumpKey = 0;
-           
+            if ((jumpKey == 1) && (Ground <= -3.5)) jumpKey = 0;
+          
                 if (Input.GetKeyDown(KeyCode.UpArrow) && jumpKey == 0)// &&skillMng.Bustskill ==2)
                 {
+
                     if (this.rigid2D.velocity.y == 0)
                     {
                         Debug.Log("謀反まんだぁぁぁ！！");
@@ -66,8 +65,6 @@ public class playerController : MonoBehaviour {
                         jumpKey = 1;
                     }
                 }
-            
-
 
             //移動 
             int Key = 0;
@@ -83,6 +80,11 @@ public class playerController : MonoBehaviour {
                 this.rigid2D.AddForce(transform.right * Key * this.walkForce);
             }
         //anime
-            this.anim.speed = speedx / 2.0f;
+            this.animator.speed = speedx / 2.0f;
+
+            if (GameMainDirector.playerHp == 0)
+            {
+                this.animator.SetTrigger("JumpTrigger");
+            }
     }
 }

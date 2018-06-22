@@ -11,7 +11,7 @@ public class GameHelpDirector : MonoBehaviour
     void Update()
     {
         //if (Input.GetMouseButtonDown(0))
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKey(KeyCode.Space))
         {
             SceneManager.LoadScene("Title Scene");
         }

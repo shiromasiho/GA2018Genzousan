@@ -11,8 +11,8 @@ public class skillMng : MonoBehaviour {
 
     public Sprite boostImg;
 
-    public static int jumpskill =1;
-    public static int Continuous_shootingskill =1;
+    public static int jumpskill;
+    public static int Continuous_shootingskill;
 	// Use this for initialization
 
     public static int Bustskill;  //ブースト
@@ -23,6 +23,8 @@ public class skillMng : MonoBehaviour {
         //gameObject.SetActive(false);
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         MainSpriteRenderer.sprite = null;
+        jumpskill = 1;
+        Continuous_shootingskill = 1;
 		
 	}
 	
