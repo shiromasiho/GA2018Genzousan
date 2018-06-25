@@ -11,7 +11,8 @@ public class EnemyControl : MonoBehaviour {
     float Enemypos;                      // enemyの初期ポジションｘ
     public static int EnemyFlg;            // 動くフラグ
     int StayFlg;                            // 一時停止フラグ
-    int StayCount;                        // 停止時間
+    int StayCount;   // 停止時間
+    float maxWalkSpeed = 2.0f;
 
     PICchip pICchip;
 
@@ -27,6 +28,8 @@ public class EnemyControl : MonoBehaviour {
     void Start()
     {
         this.rigid2D = GetComponent<Rigidbody2D>();
+        this.animator = GetComponent<Animator>();
+
         Enemy_ObjectCollider = gameObject.GetComponent<BoxCollider2D>();
         Enemy_ObjectCollider.isTrigger = false;
 
@@ -92,6 +95,22 @@ public class EnemyControl : MonoBehaviour {
         }
 
         transform.position = pos;                       // enemyの座標変更
+
+        if (GameMainDirector.enemyHp == 50)
+        {
+            this.animator.SetTrigger("Dmg1Trigger");
+            Debug.Log("殴られたのだ");
+        }
+        if (GameMainDirector.enemyHp == 30)
+        {
+            this.animator.SetTrigger("Dmg2Trigger");
+            Debug.Log("ロコちゃんが帰ってこないのだ");
+        }
+        if (GameMainDirector.enemyHp == 10)
+        {
+            this.animator.SetTrigger("Dmg3Trigger");
+            Debug.Log("ぶたないでほしいのだ");
+        }
     }
 
 }
