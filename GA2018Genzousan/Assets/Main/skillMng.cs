@@ -44,6 +44,8 @@ public class skillMng : MonoBehaviour {
           }
         //暗転
           if (PICchip.Dimflg == 1){
+              
+              Debug.Log("まっくろくろすけ");
               MainSpriteRenderer.sprite = DimskillImg;
 
           }else{

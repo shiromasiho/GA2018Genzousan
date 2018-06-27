@@ -114,7 +114,6 @@ public class EnemyControl : MonoBehaviour
     {
         if (Flashitime < 1.0f)
         {
-
             MainSpriteRenderer.sprite = enemyImg2 ;
             float level = Mathf.Abs(Mathf.Sin(Time.time * 100));
             MainSpriteRenderer.color = new Color(1f, 1f, 1f, level);
@@ -127,5 +126,13 @@ public class EnemyControl : MonoBehaviour
             MainSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //死ぬやで
+          GameMainDirector.playerHp = 0;  
+        }
+    }
+ 
 }

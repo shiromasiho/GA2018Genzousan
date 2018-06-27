@@ -74,7 +74,7 @@ public class PlayerStockShoot : MonoBehaviour
                 else
                 {
                     GameMainDirector.enemyHp--;
-                //    DamageSE.PlayOneShot(DamageSE.clip);
+                    DamageSE.PlayOneShot(DamageSE.clip);
                     FlashFlg = true;
                 }
             }
